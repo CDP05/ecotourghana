@@ -202,9 +202,10 @@
 
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="phone" name="phone"  class="form-control bg-transparent"  placeholder="Your Email">
+                                        <input type="tel" name="phone"  class="form-control bg-transparent"  placeholder="Your Email">
                                         <label for="email" required>Phone Number</label>
                                     </div>
+                                   <small style="color: crimson;"> <b>Please add your country code</b></small>
                                 </div>
 
                                 <div class="col-md-6">
@@ -213,12 +214,28 @@
                                         <label for="email" required>Your Email</label>
                                     </div>
                                 </div>
+
                                 <div class="col-md-6">
-                                    <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" name="datetime"  class="form-control bg-transparent datetimepicker-input"  placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
+                                    <div class="form-floating">
+                                        <input type="number" name="name" class="form-control bg-transparent" placeholder="Number of Tourist">
+                                        <label for="name" required>Number of Tourist </label>
                                     </div>
                                 </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="text" name="datetime"  class="form-control bg-transparent datetimepicker-input"  placeholder="Date for trip" data-target="#date3" data-toggle="datetimepicker" />
+                                        <label for="datetime">Date for Trip</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" name="name" class="form-control bg-transparent" placeholder="Pickup Location">
+                                        <label for="name" required>Pickup Location</label>
+                                    </div>
+                                </div>
+
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-transparent" name="dropdown" required>
