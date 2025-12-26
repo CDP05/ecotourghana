@@ -452,3 +452,116 @@
     padding-right: 0;
     border-right: none;
 }
+
+/* Hero Owl carousel: full-width, responsive hero slider */
+.hero-owl-wrap {
+    width: 100%;
+    position: relative;
+}
+.hero-owl {
+    width: 100%;
+}
+.hero-owl .item {
+    position: relative;
+}
+.hero-slide {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    display: block;
+}
+@media (min-width: 992px) {
+    .hero-slide { height: 72vh; }
+}
+
+/* Optional caption overlay used by theme (left/bottom) */
+.hero-owl-wrap .hero-caption {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    z-index: 5;
+    color: #fff;
+    background: rgba(0,0,0,0.45);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+/* Make nav buttons visible and styled to match theme */
+.hero-owl .owl-nav button.owl-prev,
+.hero-owl .owl-nav button.owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 50%;
+}
+.hero-owl .owl-nav button.owl-prev { left: 12px; }
+.hero-owl .owl-nav button.owl-next { right: 12px; }
+.hero-owl .owl-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 6; }
+
+/* External hero controls and thumbnail styles */
+.hero-controls {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    z-index: 8;
+    pointer-events: none; /* allow children to control pointer events individually */
+}
+.hero-controls .hero-prev,
+.hero-controls .hero-next {
+    pointer-events: auto;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-controls .hero-prev:focus,
+.hero-controls .hero-next:focus {
+    outline: 3px solid rgba(134,184,23,0.45);
+}
+.hero-thumbs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    pointer-events: auto;
+}
+.hero-thumbs button {
+    width: 56px;
+    height: 38px;
+    padding: 0;
+    border: 2px solid rgba(255,255,255,0.35);
+    background: transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.hero-thumbs button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hero-thumbs button.active {
+    border-color: var(--primary);
+}
+
+@media (max-width: 576px) {
+    .hero-thumbs { gap: 6px; }
+    .hero-thumbs button { width: 44px; height: 30px; }
+    .hero-controls .hero-prev, .hero-controls .hero-next { padding: 8px; font-size: 18px; }
+}
