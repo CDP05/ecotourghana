@@ -456,8 +456,18 @@
 /* Hero Owl carousel: full-width, responsive hero slider */
 .hero-owl-wrap {
     width: 100%;
+    max-width: 900px; /* constrain width so it's not full-screen (changed to 900px) */
+    margin: 18px auto 0; /* center within hero */
     position: relative;
     z-index: 60; /* ensure hero sits above other content */
+}
+
+/* If you want the slider to exactly match the surrounding .container width,
+   add the class `hero-match-container` to the wrapper in the markup. */
+.hero-owl-wrap.hero-match-container {
+    max-width: none;
+    width: 100%;
+    margin: 18px 0 0; /* align with container edges */
 }
 .hero-owl {
     width: 100%;
@@ -467,12 +477,19 @@
 }
 .hero-slide {
     width: 100%;
-    height: 60vh;
+    height: 420px; /* base height */
     object-fit: cover;
     display: block;
 }
+@media (max-width: 576px) {
+    .hero-slide { height: 280px; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero-slide { height: 520px; }
+}
 @media (min-width: 992px) {
-    .hero-slide { height: 72vh; }
+    /* reduced height on large desktop to make it less dominant */
+    .hero-slide { height: 380px; }
 }
 
 /* Optional caption overlay used by theme (left/bottom) */
