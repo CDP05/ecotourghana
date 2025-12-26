@@ -123,32 +123,7 @@
     <!-- Navbar & Hero End -->
 
 
-    <br>
- <!-- Hero OwlCarousel Slider (full-width, swipe enabled) -->
-                        <div class="hero-owl-wrap hero-match-container wow fadeInUp" data-wow-delay="0.5s" role="region" aria-label="Hero carousel" aria-live="polite">
-                            <div id="heroOwl" class="owl-carousel hero-owl" data-autoplay-timeout="2000" data-transition="fade">
-                                <div class="item" data-caption="Cape Coast Castle"> 
-                                    <img src="img/ca1.jpg" alt="Cape Coast coastal area" class="hero-slide">
-                                </div>
-                                <div class="item" data-caption="Kwame Nkrumah Park">
-                                    <img src="img/kn1.jpg" alt="Kintampo" class="hero-slide">
-                                </div>
-                                <div class="item" data-caption="Larabaga Mosque">
-                                    <img src="img/la.webp" alt="Lake Volta" class="hero-slide">
-                                </div>
-                                <div class="item" data-caption="Elmina Castle">
-                                    <img src="img/el1.jpg" alt="Elmina castle" class="hero-slide">
-                                </div>
-                            </div>
-                            <div class="hero-caption" id="heroCaption">Tourist Site In Ghana</div>
-                            <div id="heroLive" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
-                            <div class="hero-controls" aria-hidden="false">
-                                <button class="hero-prev" aria-label="Previous slide" aria-controls="heroOwl" type="button">‹</button>
-                                <div class="hero-thumbs" aria-label="Slide thumbnails" role="tablist"></div>
-                                <button class="hero-next" aria-label="Next slide" aria-controls="heroOwl" type="button">›</button>
-                            </div>
-                        </div>
-</br>
+
 
     <!-- About Start -->
     <div class="container-xxl py-5">
@@ -448,7 +423,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <form id="reviewForm" class="wow fadeInUp">
+                    <form id="reviewForm" class="wow fadeInUp" data-endpoint="http://localhost:3000/send-review">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <input type="text" id="reviewName" class="form-control" placeholder="Your Name" required>
@@ -475,6 +450,23 @@
                         </div>
                     </form>
                     <div id="reviewStatus" class="mt-3 text-center" aria-live="polite"></div>
+                    <!-- Dev: show active review endpoint when running locally -->
+                    <div id="reviewEndpointInfo" class="mt-2 text-center visually-hidden" style="font-size:0.9rem;color:#555;"></div>
+                    <script>
+                        (function(){
+                            try {
+                                var $form = document.getElementById('reviewForm');
+                                var info = document.getElementById('reviewEndpointInfo');
+                                if (!$form || !info) return;
+                                var endpoint = $form.getAttribute('data-endpoint') || window.REVIEW_ENDPOINT || '/send-review';
+                                // show the info only on localhost (developer environment)
+                                if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+                                    info.classList.remove('visually-hidden');
+                                    info.textContent = 'Review endpoint: ' + endpoint;
+                                }
+                            } catch (e) { console.warn(e); }
+                        })();
+                    </script>
                 </div>
             </div>
         </div>
