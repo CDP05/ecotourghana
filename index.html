@@ -114,14 +114,8 @@
                         <div class="position-relative w-75 mx-auto animated slideInDown">
                             <!-- <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;"></button> -->
                         </div>
-                        <!-- Tourist Sites Animated Slider -->
-                        <div class="tourist-slider mt-4 wow fadeInUp" data-wow-delay="0.5s" aria-hidden="false">
-                            <div class="slider-caption">Top Tourist Sites in Ghana</div>
-                            <img src="img/ca1.jpg" alt="Coastal area" class="slide">
-                            <img src="img/kn1.jpg" alt="Kintampo" class="slide">
-                            <img src="img/la.webp" alt="Lake/landscape" class="slide">
-                            <img src="img/el1.jpg" alt="Elmina or site" class="slide">
-                        </div>
+                        <!-- Hero OwlCarousel Slider (full-width, swipe enabled) -->
+                        
                     </div>
                 </div>
             </div>
@@ -180,7 +174,27 @@
         </div>
     </div>
     <!-- About End -->
-
+<div class="hero-owl-wrap wow fadeInUp" data-wow-delay="0.5s" role="region" aria-label="Hero carousel" aria-live="polite">
+                            <div id="heroOwl" class="owl-carousel hero-owl" data-autoplay-timeout="4000" data-transition="fade">
+                                <div class="item"> Tourist attractions in Ghana
+                                    <img src="img/ca1.jpg" alt="Coastal area" class="hero-slide">
+                                </div>
+                                <div class="item">
+                                    <img src="img/kn1.jpg" alt="Kintampo" class="hero-slide">
+                                </div>
+                                <div class="item">
+                                    <img src="img/la.webp" alt="Lake/landscape" class="hero-slide">
+                                </div>
+                                <div class="item">
+                                    <img src="img/el1.jpg" alt="Elmina or site" class="hero-slide">
+                                </div>
+                            </div>
+                            <div class="hero-controls" aria-hidden="false">
+                                <button class="hero-prev" aria-label="Previous slide" aria-controls="heroOwl" type="button">‹</button>
+                                <div class="hero-thumbs" aria-label="Slide thumbnails" role="tablist"></div>
+                                <button class="hero-next" aria-label="Next slide" aria-controls="heroOwl" type="button">›</button>
+                            </div>
+                        </div>
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
