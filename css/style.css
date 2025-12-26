@@ -457,6 +457,7 @@
 .hero-owl-wrap {
     width: 100%;
     position: relative;
+    z-index: 60; /* ensure hero sits above other content */
 }
 .hero-owl {
     width: 100%;
@@ -516,6 +517,8 @@
     z-index: 8;
     pointer-events: none; /* allow children to control pointer events individually */
 }
+.hero-controls { z-index: 70; }
+.hero-owl-wrap .hero-caption { z-index: 75; }
 .hero-controls .hero-prev,
 .hero-controls .hero-next {
     pointer-events: auto;
@@ -564,4 +567,13 @@
     .hero-thumbs { gap: 6px; }
     .hero-thumbs button { width: 44px; height: 30px; }
     .hero-controls .hero-prev, .hero-controls .hero-next { padding: 8px; font-size: 18px; }
+}
+
+/* Utility: visually-hidden for screen-reader only content */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
 }
